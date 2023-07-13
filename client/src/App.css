@@ -1,0 +1,90 @@
+.Home {
+  text-align: center;
+}
+
+.add {
+  margin: 30px;
+  background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+  color: #0f1111;
+  font-size: 100px;
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 800px; /* Adjust the maximum width as needed */
+  width: 100%;
+  margin: 0 auto; /* Center the table horizontally */
+}
+
+th {
+  background-color: #981e32;
+  color: white;
+}
+
+th, td {
+  width: 31%;
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.gpa-column {
+  width: 7%;
+}
+
+.button {
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  font-size: 14px;
+  height: 29px;
+  font-size: 13px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 11px;
+  text-align: center;
+  text-overflow: ellipsis;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button.edit {
+  background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+  color: #0f1111;
+  width: 75px;
+}
+
+.button.delete {
+  width: 95px;
+}
+
+.actions {
+  text-align: center;
+  margin: 20 auto;
+}
+
+.divider {
+  width:15px;
+  height:auto;
+  display:inline-block;
+}
+
+.student-form {
+  text-align: center;
+}
+
+.student-form input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 10px;
+}
