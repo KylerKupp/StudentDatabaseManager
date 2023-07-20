@@ -7,19 +7,18 @@ const StudentForm = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [gpa, setGpa] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
   
     const handleSubmit = (event) => {
       event.preventDefault();
       // Process and add student data to the database
       Axios.post("http://localhost:3001/api/insert", {name: name, email: email, gpa: gpa}).then(()=> {
-  
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error("Error occurred:", error);
+        setErrorMessage("Failed to insert data. Please try again.");
       });
-      // Reset form fields
-      setName('');
-      setEmail('');
-      setGpa('');
-      // Navigate back to the home page after adding the data
-      navigate('/');
     };
     return (
       <div className="student-form">
@@ -45,6 +44,8 @@ const StudentForm = () => {
           </div>
           <button type="submit" className="button">Add Student</button>
         </form>
+
+        {errorMessage && <p>{errorMessage}</p>}
       </div>
     );
   };

@@ -10,6 +10,7 @@ const EditForm = () => {
     gpa: 0,
   });
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -22,6 +23,10 @@ const EditForm = () => {
   const handleUpdate = () => {
     Axios.put(`http://localhost:3001/update/${id}`, student).then(() => {
       navigate('/');
+    })
+    .catch((error) => {
+      console.error("Error occurred:", error);
+      setErrorMessage("Failed to insert data. Please try again.");
     });
   };
 
@@ -57,6 +62,8 @@ const EditForm = () => {
       />
 
       <button onClick={handleUpdate} className="button update">Update</button>
+
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 };

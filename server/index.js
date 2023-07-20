@@ -32,7 +32,12 @@ app.post("/api/insert", (req, res) => {
 
   const sqlInsert = "INSERT INTO students (name, email, gpa) VALUES (?,?,?)"
   db.query(sqlInsert, [name, email, gpa], (err, result) => {
-    console.log(result)
+    if (err) {
+      console.error('Error adding student:', err);
+      res.status(500).send('An error occurred while updating the student.');
+    } else {
+      res.status(200).send(result);
+    }
   })
 
 
